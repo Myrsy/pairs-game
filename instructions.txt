@@ -1,0 +1,58 @@
+Muistipelin paluu
+
+COMP.CS.110 K2021
+
+Tässä tiedostossa on lyhyt käyttöohje ja kuvaus ohjelman toiminnasta.
+
+Ohjelman avautuessa aukeaa aloitusnäyttö, jossa kysytään pelaajien
+(lisäominaisuus) ja korttien määrää. Maksimimääriksi on asetettu pelaajille 8 ja
+korttipareille 12. Näitä voi muuttaa koodissa asettamalla muuttujille
+MAX_PLAYERS ja MAX_PAIRS erilaisia arvoja. Nämä löytyvät
+mainwindow.hh-tiedostosta.
+Myös näitä suurempia lukuja voi antaa, mutta se ei ole suositeltavaa, koska
+silloin käyttöliittymästä alkaa tulla sotkuinen. Minimissään pareja ja
+pelaajia voi olla 1. Tätä arvoa ei voi muuttaa. Mikäli syötetyt arvot eivät ole
+oikealta väliltä, tulostuu virheilmoitus, jossa kerrotaan miltä väliltä luvut
+tulee olla.
+
+Myös siemenarvon voi halutessaan antaa. Se voi olla väliltä 1-999. Mikäli
+annettu arvo poikkeaa tästä, siemenarvona käytetään satunnaista lukua
+(clock()-funktio). Poikkeavasta arvosta ei huomauteta pelaajaa millään lailla ja
+peli alkaa satunnaisella järjestyksellä.
+
+Kun pelaaja on antanut sopivat arvot, peli alkaa. Pelaajat on nimetty
+"Pelaaja 1", "Pelaaja 2" jne ja Pelaaja 1 aloittaa. Radio-button (pallo nimen
+vieressä) ilmoittaa kenen vuoro on. Vuoroa ei voi vaihtaa palloa painamalla vaan
+se vaihtuu itsestään osoittamaan oikean pelaajan vuoroa.
+
+Peli kulkee näin:
+- Pelaaja kääntää vuorollaan kaksi korttia näkyviin klikkaamalla haluamiaan
+  kortteja (nappuloita). Kortti kääntyy sitä painamalla.
+- Jos kortit eivät ole samat (eli niissä on eri kirjaimet), kuluu 1 sekunti
+  (tätäkin voi vaihtaa asettalamlla muuttujalle DELAY jokin toinen arvo
+  tiedostossa mainwindow.hh) ja käännetyt kortit kääntyvät itsestään piiloon ja
+  vuoro vaihtuu seuraavalle pelaajalle. Tällöin myös nappulat lopettamiselle ja
+  uudelleen aloittamiselle ovat disabloitu (tästä lisää alempana).
+- Jos kortit ovat samat, niin kyseiset kortit häipyvät välittömästi laudalta,
+  pelaajan nimen vieressä oleva progress-bar täyttyy hieman ja siinä oleva
+  teksti parien määrästä päivittyy (progress-bar on sen kokoinen, että se
+  täyttyy kokonaan mikäli pelaaja saa kaikki parit). Pelaajan vuoro säilyy.
+- Korttiparin poistuessa jäljelle jäävät kortit saattavat asettua uudelleen
+  tilan vapautuessa keskeltä, jolloin ne sijoittuvat keskemmälle pelilautaa.
+- Kun viimeisenä listassa olevan pelaajan vuoro päättyy, niin on taas
+  ensimmäisen vuoro.
+- Kun kaikki parit on nostettu, pelaaja, jolla on eniten pareja voittaa ja
+  tämän nimi ja parimäärä tulostuu näytölle.
+- Mikäli voittajien kesken on tasapeli, tulostuu jokaisen näiden nimi ja parit
+  näytölle.
+
+Ohjelman voi lopettaa tai käynnistää uudelleen (lisäominaisuus) milloin vain
+painamalla alareunan nappeja "Lopeta" tai "Pelaa uudestaan", paitsi sen sekunnin
+ajan, kun molemmat käännetyt kortit ovat näkyvillä.
+Painamalla "Pelaa uudestaan"-nappia ohjelma palaa takaisin tilanteseen, jossa
+pelaajien ja korttiparien määrää ja siemenlukua kysytään.
+Edellisen pelin alustuksessa käytetyt arvot on jätetty tekstikenttiin, jotta
+identtisen pelin aloittaminen alusta olisi mutkatonta (näitä voi toki muokata
+tässä kohtaa halutessaan).
+"Lopeta"-napista ohjelma päättyy.
+

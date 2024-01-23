@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>917</width>
+    <height>622</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>871</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="startPage">
+     <widget class="QTextBrowser" name="startTextBrowser">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>140</y>
+        <width>341</width>
+        <height>111</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>0</y>
+        <width>281</width>
+        <height>132</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="startGridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="playerCountLabel">
+         <property name="text">
+          <string>Montako pelaajaa?</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="pairCountLabel">
+         <property name="text">
+          <string>Montako paria?</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="startPushButton">
+         <property name="text">
+          <string>Aloita peli</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Siemenarvo</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="3">
+        <widget class="QLineEdit" name="pairCountLineEdit"/>
+       </item>
+       <item row="0" column="1" colspan="3">
+        <widget class="QLineEdit" name="playerCountLineEdit"/>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLineEdit" name="seedLineEdit"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="gamePage">
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>591</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gameGridLayout"/>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>10</y>
+        <width>231</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="playersGridLayout"/>
+     </widget>
+     <widget class="QTextBrowser" name="endTextBrowser">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>300</y>
+        <width>229</width>
+        <height>145</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="restartPushButton">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>470</y>
+        <width>131</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pelaa uudestaan</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="quitPushButton">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>510</y>
+      <width>131</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lopeta</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>917</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>quitPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>781</x>
+     <y>562</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>startPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onStartPushButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>131</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>564</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>restartPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onRestartPushButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>524</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>647</x>
+     <y>574</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onStartPushButtonClicked()</slot>
+  <slot>onRestartPushButtonClicked()</slot>
+ </slots>
+</ui>
